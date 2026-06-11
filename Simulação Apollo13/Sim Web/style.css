@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #020616;
+  font-family: Consolas, monospace;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.login-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 25%, rgba(60, 200, 255, 0.18), transparent 25%),
+    radial-gradient(circle at 20% 80%, rgba(255, 210, 70, 0.08), transparent 25%),
+    linear-gradient(135deg, #020616 0%, #050a22 50%, #01030d 100%);
+}
+
+.stars-layer {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#7f8fb3 1px, transparent 1px),
+    radial-gradient(#3cc8ff 1px, transparent 1px);
+  background-size: 90px 90px, 140px 140px, 220px 220px;
+  background-position: 10px 30px, 40px 80px, 120px 20px;
+  opacity: 0.55;
+  animation: moverEstrelas 20s linear infinite;
+}
+
+@keyframes moverEstrelas {
+  from { transform: translateY(0); }
+  to { transform: translateY(90px); }
+}
+
+.login-card {
+  width: 390px;
+  padding: 34px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(60, 200, 255, 0.35);
+  border-radius: 18px;
+  background: rgba(4, 8, 28, 0.88);
+  box-shadow: 0 0 35px rgba(60, 200, 255, 0.18);
+  color: #ebebeb;
+}
+
+.login-card h1 {
+  margin: 18px 0 8px;
+  color: #3cc8ff;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.login-card p {
+  margin: 0 0 28px;
+  text-align: center;
+  color: #ffd246;
+  font-size: 13px;
+}
+
+.login-card label {
+  display: block;
+  margin: 14px 0 6px;
+  color: #50ff78;
+  font-size: 13px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid rgba(60, 200, 255, 0.35);
+  border-radius: 8px;
+  background: #020616;
+  color: #ebebeb;
+  outline: none;
+  font-family: Consolas, monospace;
+}
+
+.login-card input:focus {
+  border-color: #3cc8ff;
+  box-shadow: 0 0 12px rgba(60, 200, 255, 0.35);
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #50ff78;
+  color: #020616;
+  font-family: Consolas, monospace;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  filter: brightness(1.08);
+}
+
+.login-card small {
+  display: block;
+  margin-top: 14px;
+  color: #828296;
+  text-align: center;
+  font-size: 11px;
+}
+
+.planet-orbit {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  position: relative;
+  animation: orbitar 8s linear infinite;
+}
+
+.planet {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  position: absolute;
+  left: 26px;
+  top: 26px;
+  background:
+    radial-gradient(circle at 35% 35%, #00dcff 0%, #004bb9 52%, #052878 100%);
+  box-shadow: 0 0 18px rgba(60, 200, 255, 0.65);
+}
+
+.moon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  right: -8px;
+  top: 44px;
+  background: #c6c6c6;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.55);
+}
+
+@keyframes orbitar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #050a22 0%, #020616 70%);
+}
+
+canvas {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 1400 / 800;
+  background: #020616;
+  border: 1px solid rgba(60, 200, 255, 0.15);
+}

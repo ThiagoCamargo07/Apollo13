@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulação NASA Apollo 13</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="loginScreen" class="login-screen">
+    <div class="stars-layer"></div>
+
+    <form id="loginForm" class="login-card">
+      <div class="planet-orbit">
+        <div class="planet"></div>
+        <div class="moon"></div>
+      </div>
+
+      <h1>Simulação Apollo 13</h1>
+      <p>Sistema Astronômico Interativo</p>
+
+      <label for="usuario">Usuário</label>
+      <input id="usuario" type="text" placeholder="Digite qualquer usuário" autocomplete="username" required />
+
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" placeholder="Digite qualquer senha" autocomplete="current-password" required />
+
+      <button type="submit">Entrar na Simulação</button>
+      <small>Acesso liberado para qualquer usuário e senha.</small>
+    </form>
+  </section>
+
+  <main id="simulacaoPage" class="page hidden">
+    <canvas id="simulador" width="1400" height="800"></canvas>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
